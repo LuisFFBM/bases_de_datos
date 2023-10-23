@@ -8,7 +8,7 @@ export PGCLIENTENCODING:=UTF8
 export PGHOST:=localhost
 
 DBNAME =$(PGDATABASE)
-PSQL = psql  
+PSQL = psql 
 CREATEDB = createdb
 DROPDB = dropdb --if-exists
 PG_DUMP = pg_dump
@@ -40,21 +40,27 @@ allqueries: query1 query2 query3 query4 query5 query6
 	@cat query?.log > all_queries.log
 
 query1:
-	@echo query-1: "please insert here a short description" | tee query1.log
-	@cat query1.sql | $(PSQL) | tee -a query1.log
+	@echo query-1: "please insert here a short description\n" | tee ./solutions/query1.html
+	@sed -i '1i\\\H' query1.sql
+	#@cat query1.sql | $(PSQL) >>./solutions/query1.html
+	#@sed -i '1d' query1.sql
 query2:
-	@echo query-2: "please insert here a short description" | tee query2.log
-	@cat query2.sql | $(PSQL) | tee -a query2.log
+	@echo query-2: "please insert here a short description\n" | tee ./solutions/query2.html
+	@sed -i '1i\\\H' query2.sql
+	@cat query2.sql | $(PSQL)  >> ./solutions/query2.html
+	@sed -i '1d' query2.sql
 query3:
-	@echo query3: "please insert here a short description" | tee query3.log
-	@cat query3.sql | $(PSQL) | tee -a query3.log
+	@echo query-3: "please insert here a short description" | tee ./solutions/query3.html
+	@sed -i '1i\\\H' query3.sql
+	@cat query3.sql | $(PSQL) >> ./solutions/query3.html
+	@sed -i '1d' query3.sql
 query4:
-	@echo query4: "please insert here a short description" | tee query4.log
-	@cat query4.sql | $(PSQL) | tee -a query4.log
+	@echo query4: "please insert here a short description" | tee ./solutions/query4.html
+	@cat query4.sql | $(PSQL) >> ./solutions/query4.html
 query5:
-	@echo query5: "please insert here a short description" | tee query5.log
-	@cat query5.sql | $(PSQL) | tee -a query5.log
+	@echo query5: "please insert here a short description" | tee ./solutions/query5.html
+	@cat query5.sql | $(PSQL) >> ./solutions/query5.html
 query6:
-	@echo query6: "please insert here a short description" | tee query6.log
-	@cat query6.sql | $(PSQL) | tee -a query6.log
+	@echo query6: "please insert here a short description" |  tee ./solutions/query6.html
+	@cat query6.sql | $(PSQL) >> ./solutions/query6.html
 
