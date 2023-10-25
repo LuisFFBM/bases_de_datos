@@ -1,7 +1,7 @@
 
 SELECT bookings.book_ref,
        bookings.total_amount,
-       Sum(amounts.amount) AS calc_amount
+       Sum(amounts.amount) AS "Coste calculado"
 FROM   (SELECT tickets.book_ref,
                ticket_flights.amount
         FROM   tickets
