@@ -43,7 +43,7 @@ allqueries: query1 query2 query3 query4 query5 query6
 
 query1: solutions
 	@echo query-1: "\n" | tee ./solutions/query1.html
-	@sed -i '1i\\\H' query1.sql
+	#@sed -i '1i\\\H' query1.sql
 	#@cat query1.sql | $(PSQL) >>./solutions/query1.html
 	#@sed -i '1d' query1.sql
 query2:	solutions
