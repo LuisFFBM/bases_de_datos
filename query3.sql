@@ -1,5 +1,3 @@
-
-
 SELECT f.arrival_airport AS "Código del Aeropuerto",
        Count(bp.seat_no) AS "Número de Pasajeros Recibidos"
 FROM   flights AS f

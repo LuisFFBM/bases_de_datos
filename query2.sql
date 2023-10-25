@@ -1,4 +1,3 @@
-
 SELECT bookings.book_ref,
        bookings.total_amount,
        Sum(amounts.amount) AS "Coste calculado"

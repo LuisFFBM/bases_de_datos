@@ -42,7 +42,7 @@ allqueries: query1 query2 query3 query4 query5 query6
 	@cat query?.log > all_queries.log
 
 query1: solutions
-	@echo query-1: "\n" | tee ./solutions/query1.html
+	@echo query-1: "Sin hacer\n" | tee ./solutions/query1.html
 	#@sed -i '1i\\\H' query1.sql
 	#@cat query1.sql | $(PSQL) >>./solutions/query1.html
 	#@sed -i '1d' query1.sql
@@ -68,7 +68,7 @@ query4:	solutions
 	@echo query-4: "The query-4 result has been successfully saved inside folder solutions in html format and in the main folder as log\n" 
 	@sed -i '1d' query4.sql
 query5:	solutions
-	@echo query-5: "Sin hacer" | tee ./solutions/query5.html ./query5.log
+	@echo query-5: "Muestra reservas para los cuales no se haya emitido alguna de las tarjetas de embarque y el resultado de forma ascendiente por la pareja (book ref, flight id).\n" | tee ./solutions/query5.html ./query5.log
 	@cat query5.sql | $(PSQL) | tee -a ./query5.log
 	@sed -i '1i\\\H' query5.sql
 	@cat query5.sql | $(PSQL) >> ./solutions/query5.html
